@@ -1,6 +1,6 @@
 import uuid
 import pandas as pd
-import app.machine_learning
+import app.machine_learning as ml
 import json
 
 
@@ -15,8 +15,8 @@ def response(request_json):
     uid = str(uuid.uuid1())
 
     # Starting the machine learning
-    tfidf_df = machine_learning.text_based_similarities(df)
-    df_recommend_games = machine_learning.recommend_games(df, tfidf_df, game_name)
+    tfidf_df = ml.text_based_similarities(df)
+    df_recommend_games = ml.recommend_games(df, tfidf_df, game_name)
     # print(df_recommend_games)
 
     # Return the answer in json object
