@@ -2,7 +2,7 @@ from flask import Flask, request
 from flask_cors import CORS
 import pandas as pd
 
-import handle_request
+import app.handle_request
 import json
  
 app = Flask(__name__)

@@ -1,6 +1,6 @@
 import uuid
 import pandas as pd
-import machine_learning
+import app.machine_learning
 import json
 
 
