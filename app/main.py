@@ -2,7 +2,7 @@ from flask import Flask, request
 from flask_cors import CORS
 import pandas as pd
 
-import app.handle_request
+import app.handle_request as handle_re
 import json
  
 app = Flask(__name__)
@@ -23,7 +23,7 @@ def postME():
    gameNamesLowerCase = [x.lower() for x in gameNames]
    res = any(game_name in string for string in gameNamesLowerCase)
    if(res):
-      res_data = handle_request.response(request_data) #method that returns the response json
+      res_data = handle_re.response(request_data) #method that returns the response json
    else:
       res_data = -1
 
