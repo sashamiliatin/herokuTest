@@ -6,6 +6,7 @@ import app.handle_request as handle_re
 import json
  
 app = Flask(__name__)
+CORS(app)
  
 @app.route("/")
 def home_view():
@@ -33,8 +34,8 @@ def postME():
    response = app.response_class(
       response=json.dumps(res_data),
       status=200,
-      mimetype='application/json'
+      mimetype='application/json',
    )
-
+   response.headers['Access-Control-Allow-Origin'] = '*'
    return response
 
